@@ -64,6 +64,19 @@ E instalar el plugin de [livereload para chrome](https://chrome.google.com/webst
 
 ## Condicionales IF
 
+También se pueden hacer uso de condicionales con ``th:if``. Un ejemplo con if ternario:
+
+```html
+<span th:if="${edad > 18} ? 'Mayor de edad' : 'Menor de edad'"></span>
+```
+
+Con ``th:unless`` es simplemente lo contrario. Si no se cumple dicha condición, se muestra el interior.
+
+```html
+<a th:unless="$!edad<18" href="www.hbo.com">HBO</a>
+```
+No obstante, la lógica queda un poco extraña y bastante confusa, ya que es como decir "si no es menor de 18, mostrar el interior cumpliéndose lo contrario". Es más conveniente usar ``th:if``.
+
 Documentar como se hace un if [aquí](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#conditional-evaluation)
 
 ## Bucles FOR
